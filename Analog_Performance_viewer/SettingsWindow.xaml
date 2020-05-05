@@ -1,0 +1,74 @@
+﻿<Window x:Class="Analog_Performance_viewer.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Analog_Performance_viewer"
+        mc:Ignorable="d"
+       WindowStartupLocation="CenterScreen"
+       AllowsTransparency="True"
+        WindowStyle="None"
+        
+        Title="SettingsWindow" Height="578.978" Width="800" Background="#FF1E1E1E">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="191*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="176*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Startup Location" Grid.Column="0" Foreground="White" FontSize="16" Margin="6,92.6,1,11.6" Grid.Row="1"/>
+
+        <Canvas Grid.Column="1" Margin="17,28.6,449,0.6" Grid.Row="1">
+            <Rectangle x:Name="center_rect" MouseLeftButtonDown="center_rect_MouseLeftButtonDown"  Width="120" Height="80" Canvas.Left="38" Canvas.Top="36" Fill="#FF5D5D6C"/>
+            <Rectangle x:Name="center_bottom_rect" MouseLeftButtonDown="center_bottom_rect_MouseLeftButtonDown"  Width="120" Height="29" Canvas.Left="38" Canvas.Top="121" Fill="#FF5D5D6C"/>
+            <Rectangle x:Name="center_top_rect" MouseLeftButtonDown="center_top_rect_MouseLeftButtonDown" Width="120" Height="29" Canvas.Left="38" Canvas.Top="2" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="center_right_rect" MouseLeftButtonDown="center_right_rect_MouseLeftButtonDown" Width="27" Height="80" Canvas.Left="163" Canvas.Top="36" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="center_left_rect" MouseLeftButtonDown="center_left_rect_MouseLeftButtonDown" Width="27" Height="80" Canvas.Left="6" Canvas.Top="36" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="top_right_rect" MouseLeftButtonDown ="top_right_rect_MouseLeftButtonDown"  Width="27" Height="29" Canvas.Left="163" Canvas.Top="2" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="bottom_right_rect" MouseLeftButtonDown="bottom_right_rect_MouseLeftButtonDown"  Width="27" Height="29" Canvas.Left="163" Canvas.Top="121" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="bottom_left_rect" MouseLeftButtonDown="bottom_left_rect_MouseLeftButtonDown" Width="28" Height="29" Canvas.Left="6" Canvas.Top="121" Fill="#FF5D5D6C" />
+            <Rectangle x:Name="top_left_rect" MouseLeftButtonDown="top_left_rect_MouseLeftButtonDown" Width="28" Height="29" Canvas.Left="6" Canvas.Top="2" Fill="#FF5D5D6C" />
+
+        </Canvas>
+        <Label x:Name="loc_lab" Content="Top Left" Grid.Column="1" Foreground="White" FontSize="16" Margin="247,92.6,308,11.6" Grid.Row="1"/>
+        <Label Content="Run on Startup" Grid.Column="0" Foreground="White" FontSize="16"  Grid.Row="2" Margin="0,0.4,0,25.2"/>
+        <CheckBox x:Name="startup_checkbox" Checked="startup_checkbox_Checked" Grid.Column="1" HorizontalAlignment="Left" Margin="17,10.4,0,0" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="90" Unchecked="startup_checkbox_Unchecked"/>
+        <Label Content="Analog Performance Viewer" Foreground="White" FontSize="22" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="385" Height="40"/>
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Margin="29,68.099,76,27.2" Grid.Row="5">
+            <Rectangle Width="30" Height="30">
+                <Rectangle.Fill>
+                    <DrawingBrush>
+                        <DrawingBrush.Drawing>
+                            <DrawingGroup>
+                                <DrawingGroup.Children>
+                                    <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                    <GeometryDrawing Brush="#FFF6F6F6" Geometry="F1M8.7755,6.319C9.0455,6.682 9.3735,7.003 9.7545,7.265 9.7325,7.413 9.6975,7.644 9.6555,7.92z M16.0005,4C16.0005,1.794 14.2055,8.88178419700125E-16 12.0005,8.88178419700125E-16 9.7945,8.88178419700125E-16 8.0005,1.794 8.0005,4 8.0005,4.482 8.0915,4.943 8.2555,5.373L7.5005,4 5.5005,4 0.000499999999998835,14 2.0005,16 11.0005,16 13.0005,14 11.6595,11.563C11.7945,11.362 11.9275,11.162 12.0325,11.004 12.4225,11.544 13.1135,12.5 13.1135,12.5L15.1935,12.5C15.1935,12.5 14.4355,8.237 14.2605,7.256 15.3245,6.519 16.0005,5.33 16.0005,4" />
+                                    <GeometryDrawing Brush="#FF424242" Geometry="F1M12,5.499C11.172,5.499 10.5,4.828 10.5,3.999 10.5,3.171 11.172,2.499 12,2.499 12.828,2.499 13.5,3.171 13.5,3.999 13.5,4.828 12.828,5.499 12,5.499 M15,4C15,2.343 13.656,1 12,1 10.344,1 9,2.343 9,4 9,5.246 9.761,6.313 10.842,6.767L10.449,9.361 11.087,10.522 12,9 13.625,11.5 14,11.5 13.158,6.767C14.239,6.313,15,5.246,15,4 M7,11L6,11 6,8 7,8z M7,13L6,13 6,12 7,12z M7,5L6,5 1.5,14 2.5,15 10.5,15 11.5,14z" />
+                                    <GeometryDrawing Brush="#FFEFEFF0" Geometry="F1M7,12L6,12 6,13 7,13z M7,11L6,11 6,8 7,8z M13.5,3.999C13.5,4.828 12.828,5.499 12,5.499 11.172,5.499 10.5,4.828 10.5,3.999 10.5,3.171 11.172,2.499 12,2.499 12.828,2.499 13.5,3.171 13.5,3.999" />
+                                </DrawingGroup.Children>
+                            </DrawingGroup>
+                        </DrawingBrush.Drawing>
+                    </DrawingBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Viewbox>
+        <Label Content="The CPU Usage May be deferint from those in Task Maneger this is normal because the" Grid.Column="0" Foreground="White" FontSize="16" Margin="75,81.099,-20,58.2" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Label Content="the program get the CPU usage  from Performance center " Grid.Column="0" Foreground="White" FontSize="16" Margin="75,118.099,-20,22.2" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button x:Name="help_but" Click="help_but_Click" Style="{StaticResource Help_but_Style}" Grid.Column="1" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top" Width="52" Height="30"/>
+        <Button x:Name="exit_but" Click="exit_but_Click" Style="{StaticResource exit_but_style}" Grid.Column="1" HorizontalAlignment="Left" Margin="600,10,0,0" VerticalAlignment="Top" Width="56" Height="30"/>
+        <Label Content="Show CPU Usage" Grid.Column="0" Foreground="White" FontSize="16"  Grid.Row="2" Margin="0,61.4,11,3.4" Grid.RowSpan="2"/>
+        <CheckBox x:Name="show_cpu_usage_checkbox" Checked="show_cpu_usage_checkbox_Checked"  Grid.Column="1" HorizontalAlignment="Left" Margin="17,10.8,0,0" Grid.Row="3" VerticalAlignment="Top" Height="20" Width="90" Unchecked="show_cpu_usage_checkbox_Unchecked"/>
+        <Label Content="UI Animations" Grid.Column="0" Foreground="White" FontSize="16"  Grid.Row="4" Margin="0,1.6,11,2.901"/>
+        <CheckBox x:Name="ui_animations_checkbox" Checked="ui_animations_checkbox_Checked"  Grid.Column="1" HorizontalAlignment="Left" Margin="17,9.6,0,0" Grid.Row="4" VerticalAlignment="Top" Height="20" Width="90" Unchecked="ui_animations_checkbox_Unchecked"/>
+
+    </Grid>
+</Window>
